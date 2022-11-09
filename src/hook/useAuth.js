@@ -1,4 +1,4 @@
-import React, { useContext, createContext, useState } from "react";
+import { useContext, createContext, useState } from "react";
 import http from "../http";
 
 export const authContext = createContext(null);
