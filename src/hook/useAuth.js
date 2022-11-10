@@ -11,7 +11,7 @@ export function useProvideAuth() {
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [user, setUser] = useState(null);
 
-  const login = (email, password) =>
+  const login = async (email, password) =>
     http
       .post("/api/users/login", {
         email,
@@ -25,7 +25,7 @@ export function useProvideAuth() {
       .catch((error) => {
         throw error.response;
       });
-  const signup = (userName, email, password) =>
+  const signup = async (userName, email, password) =>
     http
       .post("/api/users/signup", {
         userName,
@@ -41,7 +41,7 @@ export function useProvideAuth() {
         throw error.response;
       });
 
-  const signout = () =>
+  const signout = async () =>
     new Promise((resolve, _reject) => {
       setToken(null);
       setUser(null);
