@@ -25,7 +25,6 @@ export default function SignUp() {
         values.email
       )
     ) {
-      // Check email
       error.email = "Please enter a vaild email address";
     }
 
@@ -77,7 +76,6 @@ export default function SignUp() {
                     {errMessage}
                   </div>
                   <div className="mt-3">
-                    {/* <div className=" px-3 mb-6 md:mb-0"> */}
                     <div
                       className={
                         "font-bold text-gray-700 tracking-wide text-sm"
@@ -109,7 +107,6 @@ export default function SignUp() {
                         </>
                       )}
                     />
-                    {/* </div> */}
                   </div>
                   <div className="mt-8">
                     <div
