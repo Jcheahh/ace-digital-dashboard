@@ -46,6 +46,7 @@ function CheckLoggedIn(renderComponent) {
   return function Component({ children, ...rest }) {
     const [isLoggedIn, setIsLoggedIn] = useState(true);
     const auth = useAuth();
+
     useEffect(() => {
       if (auth.token !== null) {
         setIsLoggedIn(true);
@@ -60,34 +61,32 @@ function CheckLoggedIn(renderComponent) {
         render={(routerProps) =>
           isLoggedIn ? (
             <>
-              <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900">
-                <div class="container flex flex-wrap justify-between items-center mx-auto">
-                  <a href="/" class="flex items-center">
-                    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+              <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900">
+                <div className="container flex flex-wrap justify-between items-center mx-auto">
+                  <a href="/" className="flex items-center">
+                    <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
                       Home
                     </span>
                   </a>
                   <div
-                    class="hidden w-full md:block md:w-auto"
+                    className="hidden w-full md:block md:w-auto"
                     id="navbar-default"
                   >
-                    <ul class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                      <li>
-                        {auth.user ? (
-                          <li role="none">
-                            <p className="block py-2 pr-4 pl-3 text-gray-700 rounded md:hover:bg-transparent md:border-0  md:p-0 dark:text-gray-400">
-                              Welcome, {auth.user.userName}!
-                            </p>
-                          </li>
-                        ) : (
-                          <li role="none">
-                            <p className="block py-2 pr-4 pl-3 text-gray-700 rounded md:hover:bg-transparent md:border-0  md:p-0 dark:text-gray-400">
-                              Welcome!
-                            </p>
-                          </li>
-                        )}
-                      </li>
-                      <li>
+                    <ul className="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                      {auth.user ? (
+                        <li key="welcome" role="none">
+                          <p className="block py-2 pr-4 pl-3 text-gray-700 rounded md:hover:bg-transparent md:border-0  md:p-0 dark:text-gray-400">
+                            Welcome, {auth.user.userName}!
+                          </p>
+                        </li>
+                      ) : (
+                        <li key="welcome1" role="none">
+                          <p className="block py-2 pr-4 pl-3 text-gray-700 rounded md:hover:bg-transparent md:border-0  md:p-0 dark:text-gray-400">
+                            Welcome!
+                          </p>
+                        </li>
+                      )}
+                      <li key="logout">
                         <button
                           type="button"
                           className="text-gray-400 hover:text-gray-100 blocktext-sm w-full text-left"

@@ -255,15 +255,19 @@ export default function System() {
           </div>
           <div className="pt-8">
             <table>
-              <tr>
-                <th className="pr-8">Car Sold Brand</th>
-                <th>Total</th>
-              </tr>
-              {reducedCar.map(([brand, amount]) => (
+              <thead>
                 <tr>
-                  <td>{brand}</td>
-                  <td>{amount}</td>
+                  <th className="pr-8">Car Sold Brand</th>
+                  <th>Total</th>
                 </tr>
+              </thead>
+              {reducedCar.map(([brand, amount]) => (
+                <tbody>
+                  <tr>
+                    <td>{brand}</td>
+                    <td>{amount}</td>
+                  </tr>
+                </tbody>
               ))}
             </table>
           </div>
