@@ -76,13 +76,13 @@ function CheckLoggedIn(renderComponent) {
                         {auth.user ? (
                           <li role="none">
                             <p className="block py-2 pr-4 pl-3 text-gray-700 rounded md:hover:bg-transparent md:border-0  md:p-0 dark:text-gray-400">
-                              Hi, {auth.user.userName}!
+                              Welcome, {auth.user.userName}!
                             </p>
                           </li>
                         ) : (
                           <li role="none">
                             <p className="block py-2 pr-4 pl-3 text-gray-700 rounded md:hover:bg-transparent md:border-0  md:p-0 dark:text-gray-400">
-                              Hi!
+                              Welcome!
                             </p>
                           </li>
                         )}
