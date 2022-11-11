@@ -1,0 +1,25 @@
+
+@media only screen and (max-width: 600px) {
+    .chart {
+        width: 300px;
+    }
+}
+
+@media only screen and (min-width: 600px)  {
+    .chart {
+        width: 400px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    
+    .chart {
+        width: 500px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .chart {
+        width: 600px;
+    }
+}
